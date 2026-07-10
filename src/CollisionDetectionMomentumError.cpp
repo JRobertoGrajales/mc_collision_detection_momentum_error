@@ -184,7 +184,7 @@ void CollisionDetectionMomentumError::addPlot(mc_control::MCGlobalController & c
 void CollisionDetectionMomentumError::addLog(mc_control::MCGlobalController & controller)
 {
   auto & ctl = static_cast<mc_control::MCGlobalController &>(controller);
-  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_momentum", [this]() { return momentum; });
+  // ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_momentum", [this]() { return momentum; });
   ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_momentum_hat",
                                         [this]() { return momentum_hat; });
   ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_momentum_hat_dot",
@@ -193,19 +193,24 @@ void CollisionDetectionMomentumError::addLog(mc_control::MCGlobalController & co
                                         [this]() { return tau_ext_hat; });
   ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_tau_ext_hat_dot",
                                         [this]() { return tau_ext_hat_dot; });
-  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_gamma", [this]() { return gamma; });
+  // ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_gamma", [this]() { return gamma; });
   ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_momentum_error",
                                         [this]() { return momentum_error; });
-  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_high",
-                                        [this]() { return threshold_high_; });
-  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_low",
-                                        [this]() { return threshold_low_; });
-  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_offset",
-                                        [this]() { return threshold_offset_; });
-  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_filtering",
-                                        [this]() { return threshold_filtering_; });
-  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_obstacleDetected",
-                                        [this]() { return obstacle_detected_; });
+  // ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_high",
+  //                                       [this]() { return threshold_high_; });
+  // ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_low",
+  //                                       [this]() { return threshold_low_; });
+  // ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_offset",
+  //                                       [this]() { return threshold_offset_; });
+  // ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_threshold_filtering",
+  //                                       [this]() { return threshold_filtering_; });
+  // ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_obstacleDetected",
+  //                                       [this]() { return obstacle_detected_; });
+
+  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_lambda", [this]() { return lambda; });
+  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_momentum", [this]() { return momentum; });
+  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_gamma", [this]() { return gamma; });
+  ctl.controller().logger().addLogEntry("CollisionDetectionMomentumError_dt", [this]() { return dt; });
 }
 
 void CollisionDetectionMomentumError::addGui(mc_control::MCGlobalController & controller)
