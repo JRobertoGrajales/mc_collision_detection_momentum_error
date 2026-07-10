@@ -13,11 +13,11 @@ if(NOT TARGET mc_rtc::mc_control)
   find_package(mc_rtc REQUIRED)
 endif()
 
-# Configure and install the plugin configuration
-configure_file(etc/CollisionDetectionMomentumError.in.yaml
-               "${CMAKE_CURRENT_BINARY_DIR}/etc/CollisionDetectionMomentumError.yaml")
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/etc/CollisionDetectionMomentumError.yaml"
-        DESTINATION "${MC_PLUGINS_RUNTIME_INSTALL_PREFIX}/etc")
+## Configure and install the plugin configuration
+#configure_file(etc/CollisionDetectionMomentumError.in.yaml
+#               "${CMAKE_CURRENT_BINARY_DIR}/etc/CollisionDetectionMomentumError.yaml")
+#install(FILES "${CMAKE_CURRENT_BINARY_DIR}/etc/CollisionDetectionMomentumError.yaml"
+#        DESTINATION "${MC_PLUGINS_RUNTIME_INSTALL_PREFIX}/etc")
 
 set(plugin_SRC 
 src/CollisionDetectionMomentumError.cpp
